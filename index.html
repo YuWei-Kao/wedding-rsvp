@@ -781,46 +781,15 @@ form.addEventListener('submit', async (e) => {
   });
 
   try {
-    // Use no-cors iframe trick to submit to Google Forms
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
-
-    const iframeForm = document.createElement('form');
-    iframeForm.method = 'POST';
-    iframeForm.action = FORM_URL;
-    iframeForm.target = iframe.name = 'hidden_iframe_' + Date.now();
-
-    params.forEach((value, key) => {
-      if (value) {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = value;
-        iframeForm.appendChild(input);
-      }
+    await fetch(FORM_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString()
     });
 
-    // Add required hidden fields
-    ['fvv', 'partialResponse', 'pageHistory', 'fbzx', 'submissionTimestamp'].forEach((name, i) => {
-      const defaults = ['1', '[null,null,"-8995142869590311059"]', '0', '-8995142869590311059', '-1'];
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = name;
-      input.value = defaults[i];
-      iframeForm.appendChild(input);
-    });
-
-    document.body.appendChild(iframeForm);
-    iframeForm.submit();
-
-    // Show success after short delay
-    setTimeout(() => {
-      form.style.display = 'none';
-      successMsg.style.display = 'block';
-      iframe.remove();
-      iframeForm.remove();
-    }, 1000);
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
 
   } catch (err) {
     errorMsg.textContent = '送出時發生錯誤，請稍後再試或直接前往 Google 表單填寫。';
