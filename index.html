@@ -92,7 +92,7 @@
 
   .header-date {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
+    font-size: 1.4rem;
     letter-spacing: 0.35em;
     color: var(--gold);
     text-transform: uppercase;
@@ -284,7 +284,15 @@
     background: rgba(201,169,110,0.06);
   }
 
-  .radio-option input[type="radio"] { display: none; }
+  .radio-option input[type="radio"],
+  .other-input-wrap input[type="radio"] { display: none; }
+
+  .other-input-wrap input[type="radio"]:checked ~ .radio-custom {
+    border-color: var(--rose);
+  }
+  .other-input-wrap input[type="radio"]:checked ~ .radio-custom::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
 
   .radio-custom {
     width: 18px;
@@ -483,6 +491,9 @@
 <div class="petal">🌸</div>
 
 <div class="container">
+
+  <!-- Banner -->
+  <img src="banner.jpg" alt="banner" style="width:100%;display:block;border-radius:16px 16px 0 0;object-fit:cover;max-height:420px;">
 
   <!-- Header -->
   <div class="header">
