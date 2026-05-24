@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高毓崴 & 吳俞岑 要結婚啦 💍</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf8f2;
+    --warm-white: #fefcf8;
+    --blush: #e8c4b8;
+    --blush-deep: #d4957f;
+    --rose: #b06b5a;
+    --rose-dark: #8a4a3b;
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --sage: #8a9e8c;
+    --charcoal: #3a3028;
+    --text-soft: #6b5a4e;
+    --text-light: #9b8a7e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Noto Sans TC', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Decorative background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 10% 20%, rgba(232,196,184,0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 80%, rgba(201,169,110,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(253,248,242,0.8) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Floating petals decoration */
+  .petal {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatPetal linear infinite;
+    font-size: 1.2rem;
+  }
+  .petal:nth-child(1) { left: 5%; animation-delay: 0s; animation-duration: 12s; }
+  .petal:nth-child(2) { left: 15%; animation-delay: 3s; animation-duration: 15s; }
+  .petal:nth-child(3) { left: 80%; animation-delay: 6s; animation-duration: 11s; }
+  .petal:nth-child(4) { left: 90%; animation-delay: 1s; animation-duration: 14s; }
+  .petal:nth-child(5) { left: 45%; animation-delay: 8s; animation-duration: 13s; }
+
+  @keyframes floatPetal {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    animation: fadeInUp 0.8s ease both;
+  }
+
+  .header-ornament {
+    color: var(--gold);
+    font-size: 1.8rem;
+    letter-spacing: 0.5em;
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  .header-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .header-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .header-names .amp {
+    font-style: italic;
+    color: var(--rose);
+    margin: 0 10px;
+  }
+
+  .header-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-soft);
+    margin-bottom: 28px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .divider-icon {
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  /* Info box */
+  .info-box {
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(248,240,230,0.6));
+    border: 1px solid var(--gold-light);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 40px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.88rem;
+    line-height: 2;
+    color: var(--text-soft);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s 0.2s ease both;
+  }
+
+  .info-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .info-box p { margin-bottom: 4px; }
+  .info-box .event-details {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--gold-light);
+    font-weight: 500;
+    color: var(--rose-dark);
+  }
+
+  /* Form card */
+  .form-card {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201,169,110,0.25);
+    border-radius: 20px;
+    padding: 40px 36px;
+    box-shadow:
+      0 4px 24px rgba(138,74,59,0.06),
+      0 1px 4px rgba(138,74,59,0.04);
+    animation: fadeInUp 0.8s 0.4s ease both;
+  }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--rose-dark);
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  /* Question groups */
+  .question-group {
+    margin-bottom: 28px;
+  }
+
+  .question-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--text-soft);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .question-text {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.96rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  .required-mark {
+    color: var(--rose);
+    margin-left: 3px;
+  }
+
+  /* Text input */
+  .text-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--gold-light);
+    border-radius: 10px;
+    background: rgba(253,248,242,0.8);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.92rem;
+    color: var(--charcoal);
+    outline: none;
+    transition: all 0.25s ease;
+    -webkit-appearance: none;
+  }
+
+  .text-input:focus {
+    border-color: var(--gold);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(201,169,110,0.12);
+  }
+
+  .text-input::placeholder { color: var(--text-light); }
+
+  textarea.text-input {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.7;
+  }
+
+  /* Radio options */
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .radio-group.inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    border: 1px solid var(--gold-light);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(253,248,242,0.5);
+    user-select: none;
+  }
+
+  .radio-option:hover {
+    border-color: var(--gold);
+    background: rgba(201,169,110,0.06);
+  }
+
+  .radio-option input[type="radio"] { display: none; }
+
+  .radio-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gold-light);
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--rose);
+    transition: transform 0.2s ease;
+  }
+
+  .radio-option input:checked ~ .radio-custom {
+    border-color: var(--rose);
+  }
+
+  .radio-option input:checked ~ .radio-custom::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .radio-option:has(input:checked) {
+    border-color: var(--rose);
+    background: rgba(176,107,90,0.06);
+  }
+
+  .radio-option span.label-text {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.93rem;
+    color: var(--charcoal);
+  }
+
+  /* Other input */
+  .other-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 16px;
+    border: 1px solid var(--gold-light);
+    border-radius: 10px;
+    background: rgba(253,248,242,0.5);
+    transition: all 0.2s ease;
+  }
+
+  .other-input-wrap:has(input[type="radio"]:checked) {
+    border-color: var(--rose);
+    background: rgba(176,107,90,0.06);
+  }
+
+  .other-text-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.92rem;
+    color: var(--charcoal);
+  }
+
+  .other-text-input::placeholder { color: var(--text-light); }
+
+  /* Section divider */
+  .section-divider {
+    border: none;
+    border-top: 1px dashed var(--gold-light);
+    margin: 32px 0;
+  }
+
+  /* Submit button */
+  .submit-btn {
+    width: 100%;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+    color: white;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(138,74,59,0.3);
+  }
+  .submit-btn:hover::before { opacity: 1; }
+  .submit-btn:active { transform: translateY(0); }
+
+  .submit-btn-icon { margin-right: 8px; }
+
+  /* Success message */
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 48px 32px;
+    animation: fadeInUp 0.6s ease both;
+  }
+
+  .success-msg .success-icon { font-size: 3rem; margin-bottom: 20px; }
+  .success-msg h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--rose-dark);
+    margin-bottom: 12px;
+  }
+  .success-msg p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    line-height: 1.8;
+  }
+
+  /* Error */
+  .error-msg {
+    display: none;
+    background: rgba(176,107,90,0.08);
+    border: 1px solid rgba(176,107,90,0.3);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.86rem;
+    color: var(--rose-dark);
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  .field-error {
+    font-size: 0.8rem;
+    color: var(--rose);
+    margin-top: 6px;
+    display: none;
+  }
+
+  .question-group.has-error .text-input,
+  .question-group.has-error .radio-group {
+    outline: 1px solid var(--rose);
+    border-radius: 10px;
+  }
+
+  .question-group.has-error .field-error { display: block; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    color: var(--text-light);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    animation: fadeInUp 0.8s 0.6s ease both;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .form-card { padding: 28px 20px; }
+    .container { padding: 24px 16px 60px; }
+    .info-box { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating petals -->
+<div class="petal">🌸</div>
+<div class="petal">🌺</div>
+<div class="petal">🌸</div>
+<div class="petal">🌷</div>
+<div class="petal">🌸</div>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-ornament">✦ ✦ ✦</div>
+    <div class="header-date">2 0 2 7 · 0 1 · 0 2</div>
+    <h1 class="header-names">高毓崴<span class="amp">&</span>吳俞岑</h1>
+    <p class="header-subtitle">要結婚啦 💍</p>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-icon">🌸</div>
+      <div class="divider-line"></div>
+    </div>
+  </div>
+
+  <!-- Invitation message -->
+  <div class="info-box">
+    <p>在茫茫人海中相遇，在時光流轉裡相愛，</p>
+    <p>如今，我們決定牽起彼此的手，走向下一段關於「我們」的旅程。</p>
+    <br>
+    <p>這一天，對我們而言意義非凡，</p>
+    <p>也真心希望，在重要的時刻裡，有您的參與與見證。</p>
+    <br>
+    <p>懇請您撥空填寫這份出席調查表，</p>
+    <p>讓我們能細心安排，迎接您的到來。</p>
+    <div class="event-details">
+      <p>📅 日期：2027 年 1 月 2 日</p>
+      <p>🕛 時間：午宴</p>
+      <p>📍 板橋 Mega50 鼎鼎宴會廳</p>
+      <p style="font-size:0.82rem;color:var(--text-light)">新北市板橋區福丘里新站路 16 號 48 樓</p>
+    </div>
+  </div>
+
+  <!-- Form card -->
+  <div class="form-card">
+    <div class="form-title">✦ 出席回覆表 ✦</div>
+
+    <form id="rsvpForm">
+
+      <!-- Q1 姓名 -->
+      <div class="question-group" data-required="true" id="group-q1">
+        <span class="question-label">Q1</span>
+        <div class="question-text">請問您貴姓大名（請填本名）<span class="required-mark">*</span></div>
+        <input type="text" class="text-input" name="q1" placeholder="您的大名" />
+        <div class="field-error">請填寫您的姓名</div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Q2 陣營 -->
+      <div class="question-group" data-required="true" id="group-q2">
+        <span class="question-label">Q2</span>
+        <div class="question-text">你是哪個陣營的<span class="required-mark">*</span></div>
+        <div class="radio-group inline" id="q2">
+          <label class="radio-option">
+            <input type="radio" name="q2" value="男方">
+            <div class="radio-custom"></div>
+            <span class="label-text">💙 男方</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="q2" value="女方">
+            <div class="radio-custom"></div>
+            <span class="label-text">🌸 女方</span>
+          </label>
+        </div>
+        <div class="field-error">請選擇陣營</div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Q3 出席 -->
+      <div class="question-group" data-required="true" id="group-q3">
+        <span class="question-label">Q3</span>
+        <div class="question-text">是否出席婚禮<span class="required-mark">*</span></div>
+        <div class="radio-group" id="q3">
+          <label class="radio-option">
+            <input type="radio" name="q3" value="一定到，準備好吃喜酒了">
+            <div class="radio-custom"></div>
+            <span class="label-text">🥂 一定到，準備好吃喜酒了</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="q3" value="無法出席，但祝福滿滿">
+            <div class="radio-custom"></div>
+            <span class="label-text">💌 無法出席，但祝福滿滿</span>
+          </label>
+        </div>
+        <div class="field-error">請選擇是否出席</div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Q4 人數 -->
+      <div class="question-group" id="group-q4">
+        <span class="question-label">Q4</span>
+        <div class="question-text">預計出席人數（包含本人）<br><span style="font-size:0.82rem;color:var(--text-light)">婚禮前還會再做一次確認呦</span></div>
+        <div class="radio-group inline" id="q4">
+          <label class="radio-option"><input type="radio" name="q4" value="1位"><div class="radio-custom"></div><span class="label-text">1 位</span></label>
+          <label class="radio-option"><input type="radio" name="q4" value="2位"><div class="radio-custom"></div><span class="label-text">2 位</span></label>
+          <label class="radio-option"><input type="radio" name="q4" value="3位"><div class="radio-custom"></div><span class="label-text">3 位</span></label>
+          <label class="radio-option"><input type="radio" name="q4" value="4位"><div class="radio-custom"></div><span class="label-text">4 位</span></label>
+          <div class="other-input-wrap">
+            <input type="radio" name="q4" value="__other__" id="q4-other-radio">
+            <div class="radio-custom" style="flex-shrink:0"></div>
+            <input type="text" class="other-text-input" id="q4-other-text" placeholder="其他（填入人數）"
+              onfocus="document.getElementById('q4-other-radio').checked=true">
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Q5 兒童座椅 -->
+      <div class="question-group" id="group-q5">
+        <span class="question-label">Q5</span>
+        <div class="question-text">需要幾張兒童座椅</div>
+        <div class="radio-group inline" id="q5">
+          <label class="radio-option"><input type="radio" name="q5" value="0"><div class="radio-custom"></div><span class="label-text">0</span></label>
+          <label class="radio-option"><input type="radio" name="q5" value="1"><div class="radio-custom"></div><span class="label-text">1</span></label>
+          <label class="radio-option"><input type="radio" name="q5" value="2"><div class="radio-custom"></div><span class="label-text">2</span></label>
+          <label class="radio-option"><input type="radio" name="q5" value="3"><div class="radio-custom"></div><span class="label-text">3</span></label>
+          <div class="other-input-wrap">
+            <input type="radio" name="q5" value="__other__" id="q5-other-radio">
+            <div class="radio-custom" style="flex-shrink:0"></div>
+            <input type="text" class="other-text-input" id="q5-other-text" placeholder="其他"
+              onfocus="document.getElementById('q5-other-radio').checked=true">
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Q6 素食 -->
+      <div class="question-group" id="group-q6">
+        <span class="question-label">Q6</span>
+        <div class="question-text">素食需求人數</div>
+        <div class="radio-group inline" id="q6">
+          <label class="radio-option"><input type="radio" name="q6" value="0"><div class="radio-custom"></div><span class="label-text">0</span></label>
+          <label class="radio-option"><input type="radio" name="q6" value="1"><div class="radio-custom"></div><span class="label-text">1</span></label>
+          <label class="radio-option"><input type="radio" name="q6" value="2"><div class="radio-custom"></div><span class="label-text">2</span></label>
+          <label class="radio-option"><input type="radio" name="q6" value="3"><div class="radio-custom"></div><span class="label-text">3</span></label>
+          <label class="radio-option"><input type="radio" name="q6" value="4"><div class="radio-custom"></div><span class="label-text">4</span></label>
+          <div class="other-input-wrap">
+            <input type="radio" name="q6" value="__other__" id="q6-other-radio">
+            <div class="radio-custom" style="flex-shrink:0"></div>
+            <input type="text" class="other-text-input" id="q6-other-text" placeholder="其他"
+              onfocus="document.getElementById('q6-other-radio').checked=true">
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Q7 喜帖 -->
+      <div class="question-group" id="group-q7">
+        <span class="question-label">Q7</span>
+        <div class="question-text">喜帖</div>
+        <div class="radio-group" id="q7">
+          <label class="radio-option"><input type="radio" name="q7" value="我要電子喜帖"><div class="radio-custom"></div><span class="label-text">📧 我要電子喜帖</span></label>
+          <label class="radio-option"><input type="radio" name="q7" value="我要紙本喜帖"><div class="radio-custom"></div><span class="label-text">✉️ 我要紙本喜帖</span></label>
+          <label class="radio-option"><input type="radio" name="q7" value="我要全部"><div class="radio-custom"></div><span class="label-text">💌 我要全部</span></label>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Q8 Email -->
+      <div class="question-group" id="group-q8">
+        <span class="question-label">Q8</span>
+        <div class="question-text">電子喜帖寄送 E-mail</div>
+        <input type="email" class="text-input" name="q8" placeholder="your@email.com" />
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Q9 地址 -->
+      <div class="question-group" id="group-q9">
+        <span class="question-label">Q9</span>
+        <div class="question-text">紙本喜帖寄送地址<br><span style="font-size:0.82rem;color:var(--text-light)">請填入 3+3 郵遞區號及住址</span></div>
+        <input type="text" class="text-input" name="q9" placeholder="例：236040 新北市土城區..." />
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Q10 留言 -->
+      <div class="question-group" id="group-q10">
+        <span class="question-label">💬</span>
+        <div class="question-text">我有話想告訴你們</div>
+        <textarea class="text-input" name="q10" placeholder="祝福或想說的話..."></textarea>
+      </div>
+
+      <!-- Error message -->
+      <div class="error-msg" id="errorMsg">
+        ⚠️ 請確認必填欄位（Q1 姓名、Q2 陣營、Q3 是否出席）已填寫完成。
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">
+        <span class="submit-btn-icon">💍</span>送出回覆
+      </button>
+
+    </form>
+
+    <!-- Success -->
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">🌸</div>
+      <h3>謝謝您的回覆！</h3>
+      <p>我們已收到您的出席回覆，<br>非常期待在婚禮當天與您相見！<br><br>祝 幸福滿滿 ✨</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>高毓崴 & 吳俞岑 敬邀</p>
+    <p style="margin-top:6px">2027 · 01 · 02 · 板橋 Mega50 鼎鼎宴會廳</p>
+  </div>
+
+</div>
+
+<script>
+const FORM_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdUKZUhnKlzg64bvlOvXWQAtIPHPXwNluRb8psMvbLXkFPl4w/formResponse';
+
+const ENTRY_MAP = {
+  q1:  'entry.70932387',
+  q2:  'entry.1747592376',
+  q3:  'entry.1920192014',
+  q4:  'entry.985863924',
+  q5:  'entry.957196607',
+  q6:  'entry.1154313248',
+  q7:  'entry.855990283',
+  q8:  'entry.1109715144',
+  q9:  'entry.1099539809',
+  q10: 'entry.699199755',
+};
+
+const form = document.getElementById('rsvpForm');
+const errorMsg = document.getElementById('errorMsg');
+const successMsg = document.getElementById('successMsg');
+
+function getRadioValue(name) {
+  const checked = document.querySelector(`input[name="${name}"]:checked`);
+  if (!checked) return '';
+  if (checked.value === '__other__') {
+    const otherText = document.getElementById(`${name}-other-text`);
+    return otherText ? otherText.value.trim() : '';
+  }
+  return checked.value;
+}
+
+function validate() {
+  let valid = true;
+  // Required: q1, q2, q3
+  const q1 = form.q1.value.trim();
+  const q2 = getRadioValue('q2');
+  const q3 = getRadioValue('q3');
+
+  document.getElementById('group-q1').classList.toggle('has-error', !q1);
+  document.getElementById('group-q2').classList.toggle('has-error', !q2);
+  document.getElementById('group-q3').classList.toggle('has-error', !q3);
+
+  if (!q1 || !q2 || !q3) valid = false;
+  return valid;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  errorMsg.style.display = 'none';
+
+  if (!validate()) {
+    errorMsg.style.display = 'block';
+    errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return;
+  }
+
+  const params = new URLSearchParams();
+
+  // Text fields
+  params.append(ENTRY_MAP.q1,  form.q1.value.trim());
+  params.append(ENTRY_MAP.q8,  form.q8.value.trim());
+  params.append(ENTRY_MAP.q9,  form.q9.value.trim());
+  params.append(ENTRY_MAP.q10, form.q10.value.trim());
+
+  // Radio fields
+  const radioFields = ['q2','q3','q4','q5','q6','q7'];
+  radioFields.forEach(name => {
+    const val = getRadioValue(name);
+    if (val) {
+      params.append(ENTRY_MAP[name], val);
+    }
+  });
+
+  // For "other" options, also append the _sentinel
+  ['q4','q5','q6'].forEach(name => {
+    const checked = document.querySelector(`input[name="${name}"]:checked`);
+    if (checked && checked.value === '__other__') {
+      params.append(ENTRY_MAP[name] + '.other_option_response', getRadioValue(name));
+    }
+  });
+
+  try {
+    // Use no-cors iframe trick to submit to Google Forms
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    const iframeForm = document.createElement('form');
+    iframeForm.method = 'POST';
+    iframeForm.action = FORM_URL;
+    iframeForm.target = iframe.name = 'hidden_iframe_' + Date.now();
+
+    params.forEach((value, key) => {
+      if (value) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        iframeForm.appendChild(input);
+      }
+    });
+
+    // Add required hidden fields
+    ['fvv', 'partialResponse', 'pageHistory', 'fbzx', 'submissionTimestamp'].forEach((name, i) => {
+      const defaults = ['1', '[null,null,"-8995142869590311059"]', '0', '-8995142869590311059', '-1'];
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.value = defaults[i];
+      iframeForm.appendChild(input);
+    });
+
+    document.body.appendChild(iframeForm);
+    iframeForm.submit();
+
+    // Show success after short delay
+    setTimeout(() => {
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+      iframe.remove();
+      iframeForm.remove();
+    }, 1000);
+
+  } catch (err) {
+    errorMsg.textContent = '送出時發生錯誤，請稍後再試或直接前往 Google 表單填寫。';
+    errorMsg.style.display = 'block';
+  }
+});
+
+// Clear error on input
+form.q1.addEventListener('input', () => {
+  if (form.q1.value.trim()) document.getElementById('group-q1').classList.remove('has-error');
+});
+['q2','q3'].forEach(name => {
+  document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.getElementById(`group-${name}`).classList.remove('has-error');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
