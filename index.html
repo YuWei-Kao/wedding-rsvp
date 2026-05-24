@@ -535,8 +535,8 @@
       <!-- Q1 姓名 -->
       <div class="question-group" data-required="true" id="group-q1">
         <span class="question-label">Q1</span>
-        <div class="question-text">請問您貴姓大名（請填本名）<span class="required-mark">*</span></div>
-        <input type="text" class="text-input" name="q1" placeholder="您的大名" />
+        <div class="question-text">請問您的姓名 (請填本名)<span class="required-mark">*</span></div>
+        <input type="text" class="text-input" name="q1" placeholder="您的姓名" />
         <div class="field-error">請填寫您的姓名</div>
       </div>
 
@@ -545,18 +545,14 @@
       <!-- Q2 陣營 -->
       <div class="question-group" data-required="true" id="group-q2">
         <span class="question-label">Q2</span>
-        <div class="question-text">你是哪個陣營的<span class="required-mark">*</span></div>
+        <div class="question-text">和新人的關係<span class="required-mark">*</span></div>
         <div class="radio-group inline" id="q2">
-          <label class="radio-option">
-            <input type="radio" name="q2" value="男方">
-            <div class="radio-custom"></div>
-            <span class="label-text">💙 男方</span>
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="q2" value="女方">
-            <div class="radio-custom"></div>
-            <span class="label-text">🌸 女方</span>
-          </label>
+          <label class="radio-option"><input type="radio" name="q2" value="男方 親戚"><div class="radio-custom"></div><span class="label-text">💙 男方 親戚</span></label>
+          <label class="radio-option"><input type="radio" name="q2" value="男方 朋友"><div class="radio-custom"></div><span class="label-text">💙 男方 朋友</span></label>
+          <label class="radio-option"><input type="radio" name="q2" value="男方 同事"><div class="radio-custom"></div><span class="label-text">💙 男方 同事</span></label>
+          <label class="radio-option"><input type="radio" name="q2" value="女方 親戚"><div class="radio-custom"></div><span class="label-text">🌸 女方 親戚</span></label>
+          <label class="radio-option"><input type="radio" name="q2" value="女方 朋友"><div class="radio-custom"></div><span class="label-text">🌸 女方 朋友</span></label>
+          <label class="radio-option"><input type="radio" name="q2" value="女方 同事"><div class="radio-custom"></div><span class="label-text">🌸 女方 同事</span></label>
         </div>
         <div class="field-error">請選擇陣營</div>
       </div>
@@ -589,14 +585,14 @@
         <span class="question-label">Q4</span>
         <div class="question-text">預計出席人數（包含本人）<br><span style="font-size:0.82rem;color:var(--text-light)">婚禮前還會再做一次確認呦</span></div>
         <div class="radio-group inline" id="q4">
-          <label class="radio-option"><input type="radio" name="q4" value="1位"><div class="radio-custom"></div><span class="label-text">1 位</span></label>
-          <label class="radio-option"><input type="radio" name="q4" value="2位"><div class="radio-custom"></div><span class="label-text">2 位</span></label>
-          <label class="radio-option"><input type="radio" name="q4" value="3位"><div class="radio-custom"></div><span class="label-text">3 位</span></label>
-          <label class="radio-option"><input type="radio" name="q4" value="4位"><div class="radio-custom"></div><span class="label-text">4 位</span></label>
+          <label class="radio-option"><input type="radio" name="q4" value="1"><div class="radio-custom"></div><span class="label-text">1</span></label>
+          <label class="radio-option"><input type="radio" name="q4" value="2"><div class="radio-custom"></div><span class="label-text">2</span></label>
+          <label class="radio-option"><input type="radio" name="q4" value="3"><div class="radio-custom"></div><span class="label-text">3</span></label>
+          <label class="radio-option"><input type="radio" name="q4" value="4"><div class="radio-custom"></div><span class="label-text">4</span></label>
           <div class="other-input-wrap">
             <input type="radio" name="q4" value="__other__" id="q4-other-radio">
             <div class="radio-custom" style="flex-shrink:0"></div>
-            <input type="text" class="other-text-input" id="q4-other-text" placeholder="其他（填入人數）"
+            <input type="text" class="other-text-input" id="q4-other-text" placeholder="其他"
               onfocus="document.getElementById('q4-other-radio').checked=true">
           </div>
         </div>
@@ -791,9 +787,9 @@ form.addEventListener('submit', async (e) => {
 
   try {
     params.append('fvv', '1');
-    params.append('partialResponse', '[null,null,"-8995142869590311059"]');
+    params.append('partialResponse', '[null,null,"2999474013982018100"]');
     params.append('pageHistory', '0');
-    params.append('fbzx', '-8995142869590311059');
+    params.append('fbzx', '2999474013982018100');
     params.append('submissionTimestamp', '-1');
 
     await fetch(FORM_URL, {
