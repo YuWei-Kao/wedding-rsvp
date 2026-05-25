@@ -536,7 +536,7 @@
       <div class="question-group" data-required="true" id="group-q1">
         <span class="question-label">Q1</span>
         <div class="question-text">請問您的姓名 (請填本名)<span class="required-mark">*</span></div>
-        <input type="text" class="text-input" name="q1" placeholder="您的姓名" />
+        <input type="text" class="text-input" name="q1" placeholder="您的姓名" maxlength="50" />
         <div class="field-error">請填寫您的姓名</div>
       </div>
 
@@ -591,11 +591,12 @@
           <label class="radio-option"><input type="radio" name="q4" value="4"><div class="radio-custom"></div><span class="label-text">4</span></label>
           <div class="other-input-wrap">
             <input type="radio" name="q4" value="__other__" id="q4-other-radio">
-            <div class="radio-custom" style="flex-shrink:0"></div>
-            <input type="text" class="other-text-input" id="q4-other-text" placeholder="其他"
+            <label for="q4-other-radio" class="radio-custom" style="flex-shrink:0;cursor:pointer"></label>
+            <input type="text" class="other-text-input" id="q4-other-text" placeholder="其他" inputmode="numeric"
               onfocus="document.getElementById('q4-other-radio').checked=true">
           </div>
         </div>
+        <div class="field-error">其他選項請輸入數字</div>
       </div>
 
       <hr class="section-divider">
@@ -611,11 +612,12 @@
           <label class="radio-option"><input type="radio" name="q5" value="3"><div class="radio-custom"></div><span class="label-text">3</span></label>
           <div class="other-input-wrap">
             <input type="radio" name="q5" value="__other__" id="q5-other-radio">
-            <div class="radio-custom" style="flex-shrink:0"></div>
-            <input type="text" class="other-text-input" id="q5-other-text" placeholder="其他"
+            <label for="q5-other-radio" class="radio-custom" style="flex-shrink:0;cursor:pointer"></label>
+            <input type="text" class="other-text-input" id="q5-other-text" placeholder="其他" inputmode="numeric"
               onfocus="document.getElementById('q5-other-radio').checked=true">
           </div>
         </div>
+        <div class="field-error">其他選項請輸入數字</div>
       </div>
 
       <hr class="section-divider">
@@ -632,11 +634,12 @@
           <label class="radio-option"><input type="radio" name="q6" value="4"><div class="radio-custom"></div><span class="label-text">4</span></label>
           <div class="other-input-wrap">
             <input type="radio" name="q6" value="__other__" id="q6-other-radio">
-            <div class="radio-custom" style="flex-shrink:0"></div>
-            <input type="text" class="other-text-input" id="q6-other-text" placeholder="其他"
+            <label for="q6-other-radio" class="radio-custom" style="flex-shrink:0;cursor:pointer"></label>
+            <input type="text" class="other-text-input" id="q6-other-text" placeholder="其他" inputmode="numeric"
               onfocus="document.getElementById('q6-other-radio').checked=true">
           </div>
         </div>
+        <div class="field-error">其他選項請輸入數字</div>
       </div>
 
       <hr class="section-divider">
@@ -659,6 +662,7 @@
         <span class="question-label">Q8</span>
         <div class="question-text">電子喜帖寄送 E-mail</div>
         <input type="email" class="text-input" name="q8" placeholder="your@email.com" />
+        <div class="field-error">請輸入有效的 Email 格式（例：abc@gmail.com）</div>
       </div>
 
       <hr class="section-divider">
@@ -667,7 +671,8 @@
       <div class="question-group" id="group-q9">
         <span class="question-label">Q9</span>
         <div class="question-text">紙本喜帖寄送地址<br><span style="font-size:0.82rem;color:var(--text-light)">請填入 3+3 郵遞區號及住址</span></div>
-        <input type="text" class="text-input" name="q9" placeholder="例：236040 新北市土城區..." />
+        <input type="text" class="text-input" name="q9" placeholder="例：236040 新北市土城區..." maxlength="100" />
+        <div class="field-error">地址請勿超過 100 字</div>
       </div>
 
       <hr class="section-divider">
@@ -676,12 +681,13 @@
       <div class="question-group" id="group-q10">
         <span class="question-label">💬</span>
         <div class="question-text">我有話想告訴你們</div>
-        <textarea class="text-input" name="q10" placeholder="祝福或想說的話..."></textarea>
+        <textarea class="text-input" name="q10" placeholder="祝福或想說的話..." maxlength="300"></textarea>
+        <div class="field-error">留言請勿超過 300 字</div>
       </div>
 
       <!-- Error message -->
       <div class="error-msg" id="errorMsg">
-        ⚠️ 請確認必填欄位（Q1 姓名、Q2 和新人的關係、Q3 是否出席）已填寫完成。
+        ⚠️ 請確認必填欄位已填寫完成，且 Q4–Q6 的其他選項僅能輸入數字。
       </div>
 
       <!-- Submit -->
@@ -749,6 +755,20 @@ function validate() {
   document.getElementById('group-q3').classList.toggle('has-error', !q3);
 
   if (!q1 || !q2 || !q3) valid = false;
+
+  // Q4/Q5/Q6 其他選項限數字
+  ['q4', 'q5', 'q6'].forEach(name => {
+    const checked = document.querySelector(`input[name="${name}"]:checked`);
+    if (checked?.value === '__other__') {
+      const text = (document.getElementById(`${name}-other-text`)?.value || '').trim();
+      const isNum = !text || /^\d+$/.test(text);
+      document.getElementById(`group-${name}`).classList.toggle('has-error', !isNum);
+      if (!isNum) valid = false;
+    } else {
+      document.getElementById(`group-${name}`).classList.remove('has-error');
+    }
+  });
+
   return valid;
 }
 
@@ -811,6 +831,31 @@ form.addEventListener('submit', async (e) => {
 // Clear error on input
 form.q1.addEventListener('input', () => {
   if (form.q1.value.trim()) document.getElementById('group-q1').classList.remove('has-error');
+});
+
+// Q8 Email 即時格式檢查
+form.q8.addEventListener('input', () => {
+  const val = form.q8.value.trim();
+  const invalid = val !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  document.getElementById('group-q8').classList.toggle('has-error', invalid);
+  if (!document.querySelector('.question-group.has-error')) {
+    errorMsg.style.display = 'none';
+  }
+});
+
+// Q4/Q5/Q6 其他輸入欄：即時檢查只能輸入數字
+['q4', 'q5', 'q6'].forEach(name => {
+  const input = document.getElementById(`${name}-other-text`);
+  if (!input) return;
+  input.addEventListener('input', () => {
+    const val = input.value.trim();
+    const invalid = val !== '' && !/^\d+$/.test(val);
+    document.getElementById(`group-${name}`).classList.toggle('has-error', invalid);
+    // 若所有題目都無錯誤，隱藏底部錯誤訊息
+    if (!document.querySelector('.question-group.has-error')) {
+      errorMsg.style.display = 'none';
+    }
+  });
 });
 ['q2','q3'].forEach(name => {
   document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
