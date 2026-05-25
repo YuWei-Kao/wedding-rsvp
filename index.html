@@ -754,29 +754,37 @@ function validate() {
   document.getElementById('group-q2').classList.toggle('has-error', !q2);
   document.getElementById('group-q3').classList.toggle('has-error', !q3);
 
-  if (!q1 || !q2 || !q3) valid = false;
+  const requiredInvalid = !q1 || !q2 || !q3;
+  if (requiredInvalid) valid = false;
 
   // Q4/Q5/Q6 其他選項限數字
+  let numericInvalid = false;
   ['q4', 'q5', 'q6'].forEach(name => {
     const checked = document.querySelector(`input[name="${name}"]:checked`);
     if (checked?.value === '__other__') {
       const text = (document.getElementById(`${name}-other-text`)?.value || '').trim();
       const isNum = !text || /^\d+$/.test(text);
       document.getElementById(`group-${name}`).classList.toggle('has-error', !isNum);
-      if (!isNum) valid = false;
+      if (!isNum) { valid = false; numericInvalid = true; }
     } else {
       document.getElementById(`group-${name}`).classList.remove('has-error');
     }
   });
 
-  return valid;
+  return { valid, requiredInvalid, numericInvalid };
 }
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   errorMsg.style.display = 'none';
 
-  if (!validate()) {
+  const result = validate();
+  if (!result.valid) {
+    if (result.requiredInvalid) {
+      errorMsg.textContent = '⚠️ 請確認必填欄位已填寫完成';
+    } else {
+      errorMsg.textContent = '⚠️ Q4–Q6 的其他選項只能輸入數字。';
+    }
     errorMsg.style.display = 'block';
     errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     return;
